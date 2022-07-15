@@ -26,9 +26,10 @@
     <body>
         
         <div class="container-scroller">
-        <div class="container-fluid page-body-wrapper">
-            @yield('content')
-</div>
+            <div class="container-fluid page-body-wrapper">
+                @yield('content')
+                
+            </div>
         </div>
         @include('admins.layouts.script')
     </body>
