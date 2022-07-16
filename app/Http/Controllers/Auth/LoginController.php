@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Symfony\Component\HttpFoundation\Request;
 
 class LoginController extends Controller
 {
@@ -26,7 +27,15 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+
+    protected function redirectTo()
+    {
+        if (auth()->user()) {
+            return '/';
+        }
+        return '/user-login';
+    }
 
     /**
      * Create a new controller instance.
@@ -36,5 +45,21 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * override the logout function
+     */
+    protected function loggedOut(Request $request) {
+        $this->guard()->logout();
+
+   
+
+        $request->session()->flush();
+     
+     
+        $request->session()->regenerate();
+        return redirect(route('user-login'));
+    
     }
 }
