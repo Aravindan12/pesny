@@ -66,14 +66,7 @@
                                     {{ __('Login') }}
                                 </button>
                 </div>
-                <div class="mb-2 d-flex">
-                  <button type="button" class="btn btn-facebook auth-form-btn flex-grow me-1">
-                    <i class="ti-facebook me-2"></i>Facebook
-                  </button>
-                  <button type="button" class="btn btn-google auth-form-btn flex-grow ms-1">
-                    <i class="ti-google me-2"></i>Google
-                  </button>
-                </div>
+                
                 <div class="text-center mt-4 font-weight-light">
                   Don't have an account? <a href="{{route('user-register')}}" class="text-primary">Create</a>
                 </div>
