@@ -1,7 +1,10 @@
 @extends('admins.includes.app')
 
 @section('content')
+@include('admins.layouts.navbar')
+@include ('admins.layouts.sidebar')
 
+@include ('admins.layouts.right_sidebar')
 <!-- Side-bar ends -->
 <br><br>
       <!-- main-panel satrts -->

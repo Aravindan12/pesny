@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>PESNY</title>
-
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 
@@ -32,31 +32,28 @@
     <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
 
-    
+
 
 
     <!-- JS script -->
-    
+
 
 </head>
     <body>
-        
+
         <div class="container-scroller">
 
             <div class="container-fluid page-body-wrapper" style="padding-top: 60px;">
-            @include('admins.layouts.navbar')
 
-@include ('admins.layouts.sidebar')
 
-@include ('admins.layouts.right_sidebar')
                 @yield('content')
-                
+
             </div>
         </div>
         @include('admins.layouts.script')
 
         <script src="{{ asset('/sw.js') }}"></script>
-        
+
 
         <script>
             if (!navigator.serviceWorker.controller) {
@@ -66,7 +63,7 @@
             }
         </script>
     </body>
-    
+
     <!-- FontAwesome kit cdn -->
     <script src="https://kit.fontawesome.com/2463cc7a2e.js" crossorigin="anonymous"></script>
 
