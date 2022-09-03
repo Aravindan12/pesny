@@ -47,6 +47,28 @@
                   </div>
                 </div>
 
+
+
+               {{-- <div class="form-group">
+                  <label>Role</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend bg-transparent">
+                      <span class="input-group-text bg-transparent border-right-0">
+                        <i class="ti-email text-primary"></i>
+                      </span>
+                    </div>
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                  </div>
+                </div>--}}
+
+
+
                 <div class="form-group">
                 <label>{{ __('Password') }}</label>
                   <div class="input-group">

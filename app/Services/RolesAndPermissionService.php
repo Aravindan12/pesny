@@ -15,22 +15,16 @@ class RolesAndPermissionService{
         return $allroles->getAllRoles();
     }
 
-    public function checkAddOrRemovePermission($id,$role_id){
-        if($id == 1){
-            $getRolesAssigned = new RoleRepository();
-           $get = $getRolesAssigned->getPermissionsAssignedToRole($role_id);
-           $permission = array();
-           foreach($get->permissions as $rolePermission){
+    public function checkAddOrRemovePermission(){
+        $getPermissionsAll = new PermissionRepository();
+        $getPermissions = $getPermissionsAll->allPermissions();
+        $permission = array();
+            foreach($getPermissions as $rolePermission){
                $p['id'] = $rolePermission->id;
                $p['name'] = $rolePermission->name;
-               array_push($permission,$p );
-           }
-           return $permission;
-
-        }else{
-            $getRolesNotAssigned = new RoleRepository();
-            $getRolesNotAssigned->getPermissionsNotAssignedTORole($role_id);
-        }
+               array_push($permission,$p);
+            }
+        return $permission;
     }
 }
 

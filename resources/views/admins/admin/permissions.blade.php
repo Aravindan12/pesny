@@ -71,6 +71,6 @@
         </div>
           
       </div>
-      <script src="{{ asset('js/admin/script.js') }}"></script>
+      <script src="{{ asset('js/admin/roles-and-permissions.js') }}"></script>
     
 @endsection

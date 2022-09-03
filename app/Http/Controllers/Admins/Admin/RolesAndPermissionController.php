@@ -60,11 +60,8 @@ class RolesAndPermissionController extends Controller
         return redirect()->action([RolesAndPermissionController::class, 'navigateToRoles']);
     }
 
-    public function openPermissionsForRole($id, Request $request){
-        // dd($id,$request->all());
-        $role_id = $request->id;
+    public function openPermissionsForRole(){
         $checkAddOrRemove = new RolesAndPermissionService();
-        $checkRole = $checkAddOrRemove->checkAddOrRemovePermission($id,$role_id);
-        return $checkRole;
+        $g = $checkAddOrRemove->checkAddOrRemovePermission();
     }
 }

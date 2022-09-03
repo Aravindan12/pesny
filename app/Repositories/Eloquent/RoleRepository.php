@@ -22,15 +22,7 @@ class RoleRepository{
     }
 
     public function getPermissionsNotAssignedTORole($role_id){
-        $role = $this->getRoleById($role_id)->select('id')->get()->toArray();
-        // dd($role);
-        $permissions = Permission::doesntHave('roles')->get();
-        dd($permissions); 
-       dd( Permission::whereHas('roles', function($q) use($role_id){
-            $q->where('roles.id','!=',$role_id)->get();
-        }));
-        dd(Role::where('id',$role_id)->with('permissions')->whereHas('permissions', function($q) use($role_id){
-            $q->where('role_id','!=',$role_id);
-        })->get());
+        return $this->getRoleById($role_id)->select('id')->get()->toArray();
+
     }
 }
